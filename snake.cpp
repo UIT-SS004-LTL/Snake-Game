@@ -38,6 +38,15 @@ void drawSnake(int x[], int y[])
 		cout << "o";
 	}
 }
+void delSnake(int x[], int y[])
+{
+	for (int i = 0; i < n; i++)
+	{
+		gotoXY(x[i], y[i]);
+		cout << " ";
+	}
+}
+
 int main()
 {
 
