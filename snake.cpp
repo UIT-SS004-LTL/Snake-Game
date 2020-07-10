@@ -64,7 +64,19 @@ void initSnake(int x[], int y[])
 		a--;
 	}
 }
-
+void initFood(int x[], int y[], int& z, int& t)
+{
+	do
+	{
+		z = rand() % (99 - 11 + 1) + 11;
+		t = rand() % (25 - 2 + 1) + 2;
+	} while (isEaten(x, y, z, t));
+	int i = rand() % (15) + 1;
+	SetColor(i);
+	gotoXY(z, t);
+	cout << "$";
+	SetColor(7);
+}
 int main()
 {
 
