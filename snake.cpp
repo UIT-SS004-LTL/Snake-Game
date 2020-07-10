@@ -46,6 +46,14 @@ void delSnake(int x[], int y[])
 		cout << " ";
 	}
 }
+void add(int a[], int x)
+{
+	for (int i = n; i > 0; i--)
+		a[i] = a[i - 1];
+	a[0] = x;
+	n++;
+}
+
 void initSnake(int x[], int y[])
 {
 	int a = 50; int b = 13;
