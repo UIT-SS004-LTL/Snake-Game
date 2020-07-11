@@ -53,7 +53,20 @@ void add(int a[], int x)
 	a[0] = x;
 	n++;
 }
-
+void del(int a[], int vt)
+{
+	for (int i = vt; i < n; i++)
+	{
+		a[i] = a[i + 1];
+	}
+	n--;
+}
+bool ate(int z, int t, int x[], int y[])
+{
+	if (z == x[0] && t == y[0])
+		return true;
+	return false;
+}
 void initSnake(int x[], int y[])
 {
 	int a = 50; int b = 13;
