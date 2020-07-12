@@ -111,7 +111,86 @@ void handleSnake(int x[], int y[], int a, int b, int& z, int& t)
 	initFood(x, y, z,t);
 	drawSnake(x, y);
 }
+bool touch(int x[], int y[], int x0, int y0)
+{
+	if (y0 == 1 || y0 == 26) return true;
+	if (x0 == 10 || x0 == 100) return true;
+	for (int i = 1; i < n; i++)
+	{
+		if (x[0] == x[i] && y[0] == y[i])
+			return true;
+	}
+	return false;
+}
+void intro()
+{
+	drawWall();
+	gotoXY(35, 15);
+	SetColor(4);
+	cout << "===========THE SNAKE GAME=============\n";
+	system("pause");
+	system("cls");
+	drawWall();
+	SetColor(4);
+	gotoXY(15, 6);
+	cout << "USE DIRECTION TO CONTROL THE SNAKE";
+	gotoXY(15, 8);
+	cout << "GAME OVER WHEN THE SNAKE BITE ITSELF";
+	gotoXY(15, 10);
+	cout << "OR TOUCH THE WALL!\n";
+	SetColor(7);
+	system("pause");
+	system("cls");
+}
+
+
 int main()
 {
+	intro();
+	srand(time(NULL));
+	bool isDead = false;
+	int x[50];
+	int y[50];
+	int z = 0, t = 0;
+	drawWall();
+	initSnake(x,y);
+	drawSnake(x, y);
+	initFood(x, y, z, t);
+	int a = 50; int b = 13;
+	int check = 2;
+	while (isDead==false)
+	{
+		delSnake(x, y);
+		if (_kbhit())
+		{
+			char kitu = _getch();
+			if (kitu == -32)
+			{
+				kitu = _getch();
+				if (kitu == 72 && check != 0) check = 1;
+				if (kitu == 80 && check != 1) check = 0;
+				if (kitu == 77 && check != 3) check = 2;
+				if (kitu == 75 && check != 2) check = 3;
+			}
+		}
+		if (check == 0)
+			b++;
+		else if (check == 1)
+			b--;
+		else if (check == 2)
+			a++;
+		else if (check == 3)
+			a--;
 
+
+		handleSnake(x, y, a, b, z, t);
+		isDead = touch(x, y, x[0], y[0]);
+		
+		Sleep(300);
+	}
+	gotoXY(30, 15);
+	SetColor(4);
+	cout << "GAMEOVER!\nYOUR SCORE IS: "<<(n-4)*50;
+	_getch();
+	return 0; 
 }
