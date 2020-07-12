@@ -90,6 +90,19 @@ void initFood(int x[], int y[], int& z, int& t)
 	cout << "$";
 	SetColor(7);
 }
+void handleSnake(int x[], int y[], int a, int b, int& z, int& t)
+{
+	add(x, a);
+	add(y, b);
+	if (!ate(z, t, x, y))
+	{
+		del(x, n - 1);
+		del(y, n - 1);
+	}
+	else
+	initFood(x, y, z,t);
+	drawSnake(x, y);
+}
 int main()
 {
 
