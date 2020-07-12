@@ -46,6 +46,16 @@ void delSnake(int x[], int y[])
 		cout << " ";
 	}
 }
+void initSnake(int x[], int y[])
+{
+	int a = 50; int b = 13;
+	for (int i = 0; i < n; i++)
+	{
+		x[i] = a;
+		y[i] = b;
+		a--;
+	}
+}
 void add(int a[], int x)
 {
 	for (int i = n; i > 0; i--)
@@ -67,16 +77,14 @@ bool ate(int z, int t, int x[], int y[])
 		return true;
 	return false;
 }
-void initSnake(int x[], int y[])
+bool isEaten(int x[], int y[], int z, int t)
 {
-	int a = 50; int b = 13;
 	for (int i = 0; i < n; i++)
-	{
-		x[i] = a;
-		y[i] = b;
-		a--;
-	}
+		if (z == x[i] && t == y[i])
+			return true;
+	return false;
 }
+
 void initFood(int x[], int y[], int& z, int& t)
 {
 	do
