@@ -133,9 +133,9 @@ void intro()
 	drawWall();
 	SetColor(4);
 	gotoXY(15, 6);
-	cout << "USE DIRECTION TO CONTROL THE SNAKE";
+	cout << "USE DIRECTION ON KEYBOARD TO CONTROL THE SNAKE";
 	gotoXY(15, 8);
-	cout << "GAME OVER WHEN THE SNAKE BITE ITSELF";
+	cout << "GAME IS OVER WHEN THE SNAKE BITE ITSELF";
 	gotoXY(15, 10);
 	cout << "OR TOUCH THE WALL!\n";
 	SetColor(7);
