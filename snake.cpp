@@ -117,6 +117,7 @@ void handleSnake(int x[], int y[], int a, int b, int& z, int& t)
 	initFood(x, y, z,t);
 	drawSnake(x, y);
 }
+//kiểm tra xem rắn có chạm tường hay chạm 
 bool touch(int x[], int y[], int x0, int y0)
 {
 	if (y0 == 1 || y0 == 26) return true;
