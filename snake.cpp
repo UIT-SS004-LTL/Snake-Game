@@ -60,6 +60,7 @@ void initSnake(int x[], int y[])
 		a--;
 	}
 }
+//thêm 1 đoạn
 void add(int a[], int x)
 {
 	for (int i = n; i > 0; i--)
@@ -67,6 +68,7 @@ void add(int a[], int x)
 	a[0] = x;
 	n++;
 }
+//xóa 1 đoạn
 void del(int a[], int vt)
 {
 	for (int i = vt; i < n; i++)
