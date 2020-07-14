@@ -1,6 +1,7 @@
 #include<iostream>
 #include"hdrlib.h"
 using namespace std;
+//vẽ tường
 void drawWall()
 {
 	// 10 <= x <= 100
@@ -28,6 +29,7 @@ void drawWall()
 }
 
 int n = 4;
+//vẽ rắn
 void drawSnake(int x[], int y[])
 {
 	gotoXY(x[0], y[0]);
@@ -38,6 +40,7 @@ void drawSnake(int x[], int y[])
 		cout << "o";
 	}
 }
+//xóa rắn
 void delSnake(int x[], int y[])
 {
 	for (int i = 0; i < n; i++)
@@ -46,6 +49,7 @@ void delSnake(int x[], int y[])
 		cout << " ";
 	}
 }
+//khởi tạo vị trí rắn, bắt đầu từ giữa màn hình
 void initSnake(int x[], int y[])
 {
 	int a = 50; int b = 13;
