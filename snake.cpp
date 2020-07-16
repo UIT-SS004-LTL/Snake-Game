@@ -195,6 +195,7 @@ int main()
 		
 		Sleep(300);
 	}
+	system("cls");
 	gotoXY(30, 15);
 	SetColor(4);
 	cout << "GAMEOVER!\nYOUR SCORE IS: "<<(n-4)*50;
